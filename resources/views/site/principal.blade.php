@@ -113,7 +113,7 @@
             .conteudo-destaque {
                 width: 100%;
                 height: 100%;
-                min-height: 800px; 
+                min-height: 800px;
             }
 
             .esquerda {
@@ -202,7 +202,7 @@
         <header class="topo">
 
             <div class="logo">
-                <img src="img/logo.png">
+                <img src="{{ asset('img/logo.png') }}" alt="Logo">
             </div>
 
             <nav class="menu">
@@ -215,23 +215,23 @@
         </header>
 
         <main class="conteudo-destaque">
-        
+
             <section class="esquerda">
                 <article class="informacoes">
                     <h1>Sistema Super Gestão</h1>
                     <p>Software para gestão empresarial ideal para sua empresa.<p>
                     <div class="chamada">
-                        <img src="/img/check.png">
+                        <img src="{{ asset('img/check.png') }}" alt="Check">
                         <span class="texto-branco">Gestão completa e descomplicada</span>
                     </div>
                     <div class="chamada">
-                        <img src="img/check.png">
+                        <img src="{{ asset('img/check.png') }}" alt="Check">
                         <span class="texto-branco">Sua empresa na nuvem</span>
                     </div>
                 </article>
 
                 <aside class="video">
-                    <img src="img/player_video.jpg">
+                    <img src="{{ asset('img/player_video.jpg') }}" alt="Player de Vídeo">
                 </aside>
             </section>
 

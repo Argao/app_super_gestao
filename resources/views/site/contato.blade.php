@@ -3,7 +3,6 @@
     <head>
         <title>Super Gestão - Contato</title>
         <meta charset="utf-8">
-
         <style>
             html, body {
                 height: 100%;
@@ -159,7 +158,7 @@
     <body>
         <header>
             <div class="logo">
-                <img src="img/logo.png">
+                <img src="{{ asset('img/logo.png') }}" alt="Logo">
             </div>
 
             <nav>
@@ -203,9 +202,9 @@
         <footer>
             <section class="redes-sociais">
                 <h2>Redes sociais</h2>
-                <img src="img/facebook.png">
-                <img src="img/linkedin.png">
-                <img src="img/youtube.png">
+                <img src="{{ asset('img/facebook.png') }}" alt="Facebook">
+                <img src="{{ asset('img/linkedin.png') }}" alt="LinkedIn">
+                <img src="{{ asset('img/youtube.png') }}" alt="YouTube">
             </section>
             <section class="area-contato">
                 <h2>Contato</h2>
@@ -215,7 +214,7 @@
             </section>
             <section class="localizacao">
                 <h2>Localização</h2>
-                <img src="img/mapa.png">
+                <img src="{{ asset('img/mapa.png') }}" alt="Mapa">
             </section>
         </footer>
     </body>

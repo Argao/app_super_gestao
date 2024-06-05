@@ -194,14 +194,13 @@
             .redes-sociais img {
                 margin: 0px 15px 0px 15px;
             }
-
         </style>
     </head>
 
     <body>
         <header>
             <div class="logo">
-                <img src="img/logo.png">
+                <img src="{{ asset('img/logo.png') }}" alt="Logo da empresa">
             </div>
 
             <nav>
@@ -227,9 +226,9 @@
         <footer>
             <section class="redes-sociais">
                 <h2>Redes sociais</h2>
-                <img src="img/facebook.png">
-                <img src="img/linkedin.png">
-                <img src="img/youtube.png">
+                <img src="{{ asset('img/facebook.png') }}" alt="Ícone do Facebook">
+                <img src="{{ asset('img/linkedin.png') }}" alt="Ícone do LinkedIn">
+                <img src="{{ asset('img/youtube.png') }}" alt="Ícone do YouTube">
             </section>
             <section class="area-contato">
                 <h2>Contato</h2>
@@ -239,7 +238,7 @@
             </section>
             <section class="localizacao">
                 <h2>Localização</h2>
-                <img src="img/mapa.png">
+                <img src="{{ asset('img/mapa.png') }}" alt="Mapa de localização">
             </section>
         </footer>
     </body>
