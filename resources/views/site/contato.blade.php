@@ -70,7 +70,7 @@
                 color: #333333;
             }
 
-            .topo {
+            header {
                 width: 100%;
                 background-color: #f8f8f8;
                 position: absolute;
@@ -83,76 +83,34 @@
                 margin-left: 40px;
             }
 
-            .menu {
+            nav {
                 float: right;
                 margin-right: 40px;
             }
 
-            .menu li {
+            nav li {
                 display: inline;
                 float: left;
             }
 
-            .menu ul {
+            nav ul {
                 list-style-type: none;
                 margin: 0;
                 padding: 0;
                 overflow: hidden;
             }
 
-            .menu a {
+            nav a {
                 text-decoration: none;
                 padding: 14px 16px;
                 color: #333;
             }
 
-            .menu a:hover {
+            nav a:hover {
                 color: #268fd0;
             }
 
-            .conteudo-destaque {
-                width: 100%;
-                height: 100%;
-                min-height: 800px; 
-            }
-
-            .esquerda {
-                float:left;
-                background-color: #268fd0;
-                width: 60%;
-                height: 100%;
-            }
-
-            .direita {
-                float:right;
-                background-color: #2a9ee2;
-                width: 40%;
-                height: 100%;
-            }
-
-            .informacoes, .contato {
-                margin: 100px 40px 40px 40px;
-            }
-
-            .contato-principal {
-                margin: 0px 60px 60px 40px;
-            }
-
-            .chamada {
-                margin-top: 30px;
-                margin-left: 20px;
-            }
-
-            .video {
-                margin: 40px;
-            }
-
-            .video img {
-                max-width: 100%;
-                max-height: 100%;
-            }
-
-            .conteudo-pagina {
+            main {
                 width: 100%;
                 height: 100%;
                 text-align: center;
@@ -174,7 +132,7 @@
                 color: #333;
             }
 
-            .rodape {
+            footer {
                 width: 100%;
             }
 
@@ -199,28 +157,27 @@
     </head>
 
     <body>
-        <div class="topo">
-
+        <header>
             <div class="logo">
                 <img src="img/logo.png">
             </div>
 
-            <div class="menu">
+            <nav>
                 <ul>
                     <li><a href="{{ route('site.index') }}">Principal</a></li>
                     <li><a href="{{ route('site.sobrenos') }}">Sobre Nós</a></li>
                     <li><a href="{{ route('site.contato') }}">Contato</a></li>
                 </ul>
-            </div>
-        </div>
+            </nav>
+        </header>
 
-        <div class="conteudo-pagina">
-            <div class="titulo-pagina">
+        <main>
+            <section class="titulo-pagina">
                 <h1>Entre em contato conosco</h1>
-            </div>
+            </section>
 
-            <div class="informacao-pagina">
-                <div class="contato-principal">
+            <section class="informacao-pagina">
+                <article class="contato-principal">
                     <form>
                         <input type="text" placeholder="Nome" class="borda-preta">
                         <br>
@@ -239,27 +196,27 @@
                         <br>
                         <button type="submit" class="borda-preta">ENVIAR</button>
                     </form>
-                </div>
-            </div>  
-        </div>
+                </article>
+            </section>
+        </main>
 
-        <div class="rodape">
-            <div class="redes-sociais">
+        <footer>
+            <section class="redes-sociais">
                 <h2>Redes sociais</h2>
                 <img src="img/facebook.png">
                 <img src="img/linkedin.png">
                 <img src="img/youtube.png">
-            </div>
-            <div class="area-contato">
+            </section>
+            <section class="area-contato">
                 <h2>Contato</h2>
                 <span>(11) 3333-4444</span>
                 <br>
                 <span>supergestao@dominio.com.br</span>
-            </div>
-            <div class="localizacao">
+            </section>
+            <section class="localizacao">
                 <h2>Localização</h2>
                 <img src="img/mapa.png">
-            </div>
-        </div>
+            </section>
+        </footer>
     </body>
 </html>

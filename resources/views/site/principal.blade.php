@@ -199,25 +199,25 @@
     </head>
 
     <body>
-        <div class="topo">
+        <header class="topo">
 
             <div class="logo">
                 <img src="img/logo.png">
             </div>
 
-            <div class="menu">
+            <nav class="menu">
                 <ul>
                     <li><a href="{{ route('site.index') }}">Principal</a></li>
                     <li><a href="{{ route('site.sobrenos') }}">Sobre Nós</a></li>
                     <li><a href="{{ route('site.contato') }}">Contato</a></li>
                 </ul>
-            </div>
-        </div>
+            </nav>
+        </header>
 
-        <div class="conteudo-destaque">
+        <main class="conteudo-destaque">
         
-            <div class="esquerda">
-                <div class="informacoes">
+            <section class="esquerda">
+                <article class="informacoes">
                     <h1>Sistema Super Gestão</h1>
                     <p>Software para gestão empresarial ideal para sua empresa.<p>
                     <div class="chamada">
@@ -228,15 +228,15 @@
                         <img src="img/check.png">
                         <span class="texto-branco">Sua empresa na nuvem</span>
                     </div>
-                </div>
+                </article>
 
-                <div class="video">
+                <aside class="video">
                     <img src="img/player_video.jpg">
-                </div>
-            </div>
+                </aside>
+            </section>
 
-            <div class="direita">
-                <div class="contato">
+            <section class="direita">
+                <article class="contato">
                     <h1>Contato</h1>
                     <p>Caso tenha qualquer dúvida por favor entre em contato com nossa equipe pelo formulário abaixo.<p>
                     <form>
@@ -257,8 +257,8 @@
                         <br>
                         <button type="submit" class="borda-branca">ENVIAR</button>
                     </form>
-                </div>
-            </div>
-        </div>
+                </article>
+            </section>
+        </main>
     </body>
 </html>
