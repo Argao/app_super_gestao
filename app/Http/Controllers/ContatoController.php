@@ -8,7 +8,7 @@ class ContatoController extends Controller
 {
     public function contato()
     {
-        echo view('site.contato');
+        return view('site.contato',['titulo' => 'Contato']);
     }
 
 }
