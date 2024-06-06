@@ -7,12 +7,12 @@
     </head>
 
     <body>
-        <header>
+        <header class="topo">
             <div class="logo">
                 <img src="{{ asset('img/logo.png') }}" alt="Logo">
             </div>
 
-            <nav>
+            <nav class="menu">
                 <ul>
                     <li><a href="{{ route('site.index') }}">Principal</a></li>
                     <li><a href="{{ route('site.sobrenos') }}">Sobre Nós</a></li>
@@ -21,7 +21,7 @@
             </nav>
         </header>
 
-        <main>
+        <main class="conteudo-pagina">
             <section class="titulo-pagina">
                 <h1>Entre em contato conosco</h1>
             </section>
@@ -50,7 +50,7 @@
             </section>
         </main>
 
-        <footer>
+        <footer class="rodape">
             <section class="redes-sociais">
                 <h2>Redes sociais</h2>
                 <img src="{{ asset('img/facebook.png') }}" alt="Facebook">

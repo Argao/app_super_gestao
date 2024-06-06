@@ -8,7 +8,6 @@
 
     <body>
         <header class="topo">
-
             <div class="logo">
                 <img src="{{ asset('img/logo.png') }}" alt="Logo">
             </div>
@@ -23,7 +22,6 @@
         </header>
 
         <main class="conteudo-destaque">
-
             <section class="esquerda">
                 <article class="informacoes">
                     <h1>Sistema Super Gestão</h1>
