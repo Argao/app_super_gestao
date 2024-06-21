@@ -12,14 +12,22 @@
             <div style="width: 30%; margin-left: auto; margin-right: auto;">
                 <form action="{{ route('site.login') }}" method="post">
                     @csrf
+
                     <input name="usuario" value="{{ old('usuario') }}" type="email" placeholder="Usuário" class="borda-preta">
-                    @if($errors->has('usuario')) <span class="erro">{{$errors->first('usuario')}}</span>@endif
+                    @if($errors->has('usuario'))
+                        <span class="erro">{{$errors->first('usuario')}}</span>
+                    @endif
 
                     <input name="senha" value="{{ old('senha') }}" type="password" placeholder="Senha" class="borda-preta">
-                    @if($errors->has('senha')) <span class="erro">{{$errors->first('senha')}}</span>@endif
+                    @if($errors->has('senha'))
+                        <span class="erro">{{$errors->first('senha')}}</span>
+                    @endif
 
                     <button type="submit" class="borda-preta">Acessar</button>
                 </form>
+                @if(isset($erro) && $erro != '')
+                    <span class="erro">{{ $erro }}</span>
+                @endif
             </div>
         </section>
     </main>
