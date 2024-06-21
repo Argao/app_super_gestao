@@ -1,6 +1,7 @@
 {{ $slot }}
 <form action="{{route('site.contato')}}" method="post">
     @csrf
+
     <input type="text" placeholder="Nome" value="{{ old('nome') }}" class={{$classe}} name="nome" id="nome">
     @if($errors->has('nome')) <p class="erro">{{$errors->first('nome')}}</p> @else <br> @endif
 
