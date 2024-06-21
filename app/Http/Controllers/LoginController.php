@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
+
 
 class LoginController extends Controller
 {
@@ -27,6 +29,22 @@ class LoginController extends Controller
 
         $request->validate($regras,$feedback);
 
-        print_r($request->all());
+        //recuperamos os parâmetros do formulário
+        $email = $request->get('usuario');
+        $password = $request->get('senha');
+
+        echo "Usuário: $email | Senha: $password <br>";
+
+        //iniciar Model User
+        $user = new User();
+
+        $usuario = $user->where('email',$email)->where('password',$password)->get()->first();
+
+        if(isset($usuario->name)){
+            echo 'Usuário existe';
+        }else{
+            echo 'Usuário não existe';
+        }
+
     }
 }
