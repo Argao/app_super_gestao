@@ -29,6 +29,16 @@ input, select, textarea, button {
     color: #333;
 }
 
+table {
+    width: 100%;
+
+}
+
+table, th, td {
+    border: 1px solid black;
+
+}
+
 .texto-branco {
     color: #ffffff;
 }
@@ -201,6 +211,6 @@ button:hover {
 }
 .sucsses{
     color: green;
-    margin: 5px;
+    margin-bottom: 5px;
     font-size: 1.2em;
 }
