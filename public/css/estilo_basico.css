@@ -199,3 +199,8 @@ button:hover {
     margin: 0 0 0 10px;
     font-size: 0.8em;
 }
+.sucsses{
+    color: green;
+    margin: 5px;
+    font-size: 1.2em;
+}

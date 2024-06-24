@@ -17,12 +17,29 @@
 
         <div class="informacao-pagina">
             <div style="width: 30%; margin: 0 auto 0 auto;">
-                <form method="post" action="">
-                    <input type="text" name="nome" placeholder="Nome" class="borda-preta">
-                    <input type="text" name="site" placeholder="Site" class="borda-preta">
-                    <input type="text" name="uf" placeholder="UF" class="borda-preta">
-                    <input type="text" name="email" placeholder="E-mail" class="borda-preta">
+                <form method="post" action="{{route('app.fornecedor.adicionar')}}">
+                    @csrf
+                    <!-- Mensagem de Sucesso -->
+                    <span class="sucsses">{{$msg}}</span>
+
+                    <input type="text" name="nome" placeholder="Nome" value="{{old('nome')}}" class="borda-preta">
+                    <!-- Mensagem de Erro -->
+                    <span class="erro">{{$errors->has('nome') ? $errors->first('nome') : ''}}</span>
+
+                    <input type="text" name="site" placeholder="Site" value="{{old('site')}}" class="borda-preta">
+                    <!-- Mensagem de Erro -->
+                    <span class="erro">{{$errors->has('site') ? $errors->first('site') : ''}}</span>
+
+                    <input type="text" name="uf" placeholder="UF" value="{{old('uf')}}" class="borda-preta">
+                    <!-- Mensagem de Erro -->
+                    <span class="erro">{{$errors->has('uf') ? $errors->first('uf') : ''}}</span>
+
+                    <input type="text" name="email" placeholder="E-mail" value="{{old('email')}}" class="borda-preta">
+                    <!-- Mensagem de Erro -->
+                    <span class="erro">{{$errors->has('email') ? $errors->first('email') : ''}}</span>
+
                     <button type="submit">Cadastrar</button>
+
                 </form>
             </div>
         </div>
