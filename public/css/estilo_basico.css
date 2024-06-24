@@ -209,8 +209,14 @@ button:hover {
     margin: 0 0 0 10px;
     font-size: 0.8em;
 }
-.sucsses{
+.msg-successes{
     color: green;
     margin-bottom: 5px;
     font-size: 1.2em;
 }
+.msg-erro{
+    color: red;
+    margin-bottom: 5px;
+    font-size: 1.2em;
+}
+

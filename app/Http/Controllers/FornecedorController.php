@@ -24,11 +24,10 @@ class FornecedorController extends Controller
     }
     public function adicionar(Request $request)
     {
-        $msg = '';
+        $msg = ['msg'=>'','classe'=>''];
 
-        if($request->input('_token') != '')
+        if($request->input('_token') != '' && $request->input('id') == '')
         {
-
             //cadastro
             $regras = [
                 'nome' => 'required|min:3|max:40',
@@ -54,8 +53,35 @@ class FornecedorController extends Controller
            //redirect
 
             //dados view
-            $msg = 'Cadastro realizado com sucesso!';
+            $msg['msg'] = 'Cadastro realizado com sucesso!';
+            $msg['classe'] = 'msg-successes';
+        }elseif ($request->input('_token') != '' && $request->input('id') != '') {
+            //edição
+            $fornecedor = Fornecedor::find($request->input('id'));
+            $update = $fornecedor->update($request->all());
+
+            if ($update){
+                $msg['msg'] = 'Fornecedor alterado com sucesso!';
+                $msg['classe'] = 'msg-successes';
+
+            }else{
+                $msg['msg'] = 'Erro ao tentar atualizar o registro';
+                $msg['classe'] = 'msg-erro';
+            }
+            return redirect()->route('app.fornecedor.editar', ['id' => $request->input('id'), 'msg' =>$msg['msg'],'msg_classe' =>$msg['classe']]);
         }
-        return view('app.fornecedor.adicionar', ['msg' => $msg]);
+
+        return view('app.fornecedor.adicionar', ['msg' =>$msg['msg'],'msg_classe' =>$msg['classe']]);
+    }
+
+    public function editar($id, $msg = '', $msg_classe = '')
+    {
+        $fornecedor = Fornecedor::find($id);
+        return view('app.fornecedor.adicionar',['fornecedor' => $fornecedor, 'msg' =>$msg,'msg_classe' =>$msg_classe]);
+    }
+
+    public function excluir($id)
+    {
+        echo $id;
     }
 }
