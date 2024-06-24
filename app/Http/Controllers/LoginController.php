@@ -22,9 +22,6 @@ class LoginController extends Controller
                 break;
         }
 
-
-
-
         return view('site.login',['titulo' => 'Login', 'erro' => $erro]);
     }
 
