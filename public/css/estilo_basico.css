@@ -220,3 +220,12 @@ button:hover {
     font-size: 1.2em;
 }
 
+.pagination li{
+    display: inline;
+    margin: 0 5px 0 5px;
+}
+
+.pagination ul{
+    list-style-type: none;
+
+}
