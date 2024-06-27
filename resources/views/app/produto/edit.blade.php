@@ -17,16 +17,9 @@
 
         <div class="informacao-pagina">
             <div style="width: 30%; margin: 0 auto 0 auto;">
-                <form method="post" action="">
-                    {{--
-                    <span class="{{$msg_classe ?? ''}}">{{$msg ?? ''}}</span>
-                    <input type="hidden" name="id" value="{{$fornecedor->id ?? ''}}">
-                    --}}
-
+                <form method="post" action="{{route('produto.update',$produto)}}">
                     @csrf
-                    <!-- Mensagem de Sucesso ou Erro -->
-
-
+                    @method('PUT')
                     <input type="text" name="nome" placeholder="Nome" value="{{ $produto->nome ?? old('nome') }}" class="borda-preta">
                     <!-- Mensagem de Erro -->
                     <span class="erro">{{$errors->has('nome') ? $errors->first('nome') : ''}}</span>
