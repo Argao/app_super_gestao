@@ -1,5 +1,5 @@
 @if(isset($produto_detalhe->id))
-    <form method="post" action="{{route('produto.update',$produto_detalhe)}}">
+    <form method="post" action="{{route('produto-detalhe.update',$produto_detalhe)}}">
         @method('PUT')
 @else
     <form method="post" action="{{route('produto-detalhe.store')}}">
