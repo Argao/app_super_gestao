@@ -4,7 +4,11 @@ namespace App\Http\Controllers;
 
 use App\ProdutoDetalhe;
 use App\Unidade;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+use Illuminate\View\View;
 
 class ProdutoDetalheController extends Controller
 {
@@ -15,7 +19,7 @@ class ProdutoDetalheController extends Controller
      */
     public function index()
     {
-        //
+        echo "ois";
     }
 
     /**
@@ -55,24 +59,26 @@ class ProdutoDetalheController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param ProdutoDetalhe $produtoDetalhe
+     * @return Application|Factory|View
      */
     public function edit(ProdutoDetalhe $produtoDetalhe)
     {
-        dd($produtoDetalhe);
+        $unidades = Unidade::all();
+        return view('app.produto_detalhe.edit',['produto_detalhe' =>$produtoDetalhe,'unidades' => $unidades]);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @param ProdutoDetalhe $produtoDetalhe
+     * @return Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, ProdutoDetalhe $produtoDetalhe)
     {
-        //
+        $produtoDetalhe->update($request->all());
+        echo "Sucesso!";
     }
 
     /**
