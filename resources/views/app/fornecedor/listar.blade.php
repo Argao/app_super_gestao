@@ -41,7 +41,7 @@
                             <tr>
                                 <td colspan="6">
                                     <p>Lista de produtos</p>
-                                    <table style=" width: auto; margin: 20px">
+                                    <table style=" width: auto; margin: 20px auto 20px auto">
                                         <thead>
                                         <tr>
                                             <td>ID</td>
