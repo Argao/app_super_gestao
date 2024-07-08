@@ -39,19 +39,27 @@ class PedidoProdutoController extends Controller
     public function store(Request $request, Pedido $pedido)
     {
         $regras = [
-            'produto_id' => 'exists:produtos,id'
+            'produto_id' => 'exists:produtos,id',
+            'quantidade' => 'required|integer|gt:0'
         ];
 
         $feedback = [
-            'produto_id.exists' => 'O produto informado não existe'
+            'produto_id.exists' => 'O produto informado não existe',
+            'quantidade.required' => 'O campo quantidade é obrigatório',
+            'quantidade.integer' => 'A quantidade deve ser um número inteiro',
+            'quantidade.gt' => 'A quantidade deve ser maior que zero'
         ];
 
         $request->validate($regras, $feedback);
 
+        /*
         $pedidoProduto = new PedidoProduto();
         $pedidoProduto->pedido_id = $pedido->id;
         $pedidoProduto->produto_id = $request->get('produto_id');
+        $pedidoProduto->quantidade = $request->get('quantidade');
         $pedidoProduto->save();
+        */
+        $pedido->produtos()->attach($request->get('produto_id'), ['quantidade' => $request->get('quantidade')]);
 
         return redirect()->route('pedido-produto.create', ['pedido' => $pedido->id]);
     }
@@ -96,8 +104,10 @@ class PedidoProdutoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(PedidoProduto $pedidoProduto)
     {
-        //
+        $pedidoProduto->delete();
+        return redirect()->route('pedido-produto.create', ['pedido' => $pedidoProduto->pedido_id]);
     }
+
 }

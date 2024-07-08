@@ -62,7 +62,8 @@ class ProdutoController extends Controller
             'descricao' => 'required|min:3|max:2000',
             'peso' => 'required|integer',
             'unidade_id' => 'exists:unidades,id',
-            'fornecedor_id' => 'exists:fornecedores,id'
+            'fornecedor_id' => 'exists:fornecedores,id',
+
         ];
         $feedback =[
             'required' => 'O campo :attribute deve ser preenchido',
@@ -72,7 +73,8 @@ class ProdutoController extends Controller
             'descricao.max' => 'O campo descrição deve ter no máximo 2000 caracteres',
             'peso.integer' => 'O campo peso deve ser um número inteiro',
             'unidade_id.exists' => 'A unidade de medida informada não existe',
-            'fornecedor_id.exists' => 'O fornecedor informado não existe'
+            'fornecedor_id.exists' => 'O fornecedor informado não existe',
+
         ];
 
         $request->validate($regras,$feedback);
@@ -144,9 +146,9 @@ class ProdutoController extends Controller
      * @param  \App\Produto  $produto
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Produto $produto)
+    public function destroy(Produto $produto, $pedido_id)
     {
         $produto->delete();
-        return redirect()->route('produto.index',$produto);
+        return redirect()->route('pedido_produto.create', ['pedido' => $pedido_id]);
     }
 }
