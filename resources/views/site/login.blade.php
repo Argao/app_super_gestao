@@ -13,7 +13,7 @@
                 <form action="{{ route('site.login') }}" method="post">
                     @csrf
 
-                    <input name="usuario" value="{{ old('usuario') }}" type="email" placeholder="Usuário" class="borda-preta">
+                    <input name="usuario" value="{{ old('usuario') }}" type="text" placeholder="Usuário" class="borda-preta">
                     @if($errors->has('usuario'))
                         <span class="erro">{{$errors->first('usuario')}}</span>
                     @endif

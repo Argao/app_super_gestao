@@ -27,6 +27,7 @@ class LoginController extends Controller
 
     public function autenticar(Request $request)
     {
+        session_start();
         //regras de validação
         $regras = [
             'usuario' => 'email',
@@ -53,7 +54,7 @@ class LoginController extends Controller
         $usuario = $user->where('email',$email)->where('password',$password)->get()->first();
 
         if(isset($usuario->name)){
-            session_start();
+
             $_SESSION['nome'] = $usuario->name;
             $_SESSION['email'] = $usuario->email;
 
